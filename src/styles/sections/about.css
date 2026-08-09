@@ -1,0 +1,492 @@
+/* =========================
+   ABOUT / NOSOTROS
+========================= */
+
+.about {
+  padding:
+    clamp(90px, 11vw, 145px)
+    0;
+
+  background:
+    var(--color-background);
+}
+
+.about__layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(500px, 1.1fr);
+
+  align-items: center;
+
+  gap:
+    clamp(60px, 8vw, 120px);
+}
+
+/* CONTENT */
+
+.about__content {
+  max-width: 590px;
+}
+
+.about__eyebrow {
+  width: fit-content;
+
+  margin-bottom: 22px;
+
+  padding:
+    7px
+    11px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  border-radius: 999px;
+
+  background:
+    var(--color-primary-soft);
+
+  color:
+    var(--color-primary);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.about__eyebrow > span {
+  width: 6px;
+  height: 6px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-primary);
+}
+
+.about__content h2 {
+  margin: 0;
+
+  color:
+    var(--color-dark);
+
+  font-size:
+    clamp(40px, 4vw, 58px);
+
+  line-height: 1.05;
+
+  letter-spacing:
+    -0.05em;
+}
+
+.about__content h2 span {
+  color:
+    var(--color-primary);
+}
+
+.about__lead {
+  margin:
+    28px
+    0
+    0;
+
+  color:
+    var(--color-text);
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.about__text {
+  margin:
+    18px
+    0
+    0;
+
+  color:
+    var(--color-muted);
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* CAPABILITIES */
+
+.about__capabilities {
+  margin-top: 28px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.about__capabilities span {
+  padding:
+    8px
+    11px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius: 999px;
+
+  background:
+    var(--color-background-soft);
+
+  color:
+    var(--color-text);
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.about__capabilities svg {
+  color:
+    var(--color-primary);
+}
+
+.about__link {
+  width: fit-content;
+
+  margin-top: 30px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color:
+    var(--color-primary);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   VISUAL
+========================= */
+
+.about__visual {
+  position: relative;
+
+  padding:
+    clamp(28px, 4vw, 42px);
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-xl);
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(37, 99, 235, 0.09),
+      transparent 34%
+    ),
+    var(--color-background-soft);
+
+  box-shadow:
+    var(--shadow-sm);
+}
+
+.about__visual-header {
+  max-width: 430px;
+}
+
+.about__visual-header span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color:
+    var(--color-primary);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.09em;
+}
+
+.about__visual-header strong {
+  color:
+    var(--color-dark);
+
+  font-size:
+    clamp(22px, 2.4vw, 31px);
+
+  line-height: 1.2;
+
+  letter-spacing:
+    -0.035em;
+}
+
+/* VALUES */
+
+.about__values {
+  margin-top: 32px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.about-value {
+  min-width: 0;
+
+  padding: 18px;
+
+  display: flex;
+
+  gap: 13px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.about-value:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    var(--shadow-sm);
+}
+
+.about-value__icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  border-radius: 12px;
+}
+
+.about-value__icon--blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.about-value__icon--green {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.about-value__icon--orange {
+  background: #fff7ed;
+  color: #f59e0b;
+}
+
+.about-value__icon--purple {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.about-value h3 {
+  margin:
+    2px
+    0
+    7px;
+
+  color:
+    var(--color-dark);
+
+  font-size: 13px;
+}
+
+.about-value p {
+  margin: 0;
+
+  color:
+    var(--color-muted);
+
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.about__ecosystem {
+  margin-top: 34px;
+
+  padding:
+    22px
+    18px;
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--color-background);
+}
+
+.about__ecosystem-line {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  align-items: center;
+}
+
+.about__ecosystem-line::before {
+  content: "";
+
+  position: absolute;
+
+  left: 6%;
+  right: 6%;
+
+  top: 50%;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--color-primary),
+      #7c3aed
+    );
+}
+
+.about__ecosystem-line span {
+  position: relative;
+
+  z-index: 1;
+
+  width: 11px;
+  height: 11px;
+
+  justify-self: center;
+
+  border:
+    3px solid
+    var(--color-background);
+
+  border-radius: 50%;
+
+  background:
+    var(--color-primary);
+
+  box-shadow:
+    0 0 0 2px
+    var(--color-primary);
+}
+
+.about__ecosystem-items {
+  margin-top: 13px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  text-align: center;
+}
+
+.about__ecosystem-items span {
+  color:
+    var(--color-muted);
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1050px) {
+  .about__layout {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .about__content {
+    max-width: 720px;
+  }
+
+  .about__visual {
+    max-width: 850px;
+  }
+}
+
+@media (max-width: 650px) {
+  .about__values {
+    grid-template-columns: 1fr;
+  }
+
+  .about__visual {
+    padding:
+      24px
+      18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding:
+      80px
+      0;
+  }
+
+  .about__lead {
+    font-size: 15px;
+  }
+
+  .about-value {
+    padding: 15px;
+  }
+
+  .about__ecosystem {
+    padding:
+      20px
+      10px;
+  }
+
+  .about__ecosystem-items span {
+    font-size: 8px;
+  }
+}
