@@ -10,7 +10,7 @@ export function Navbar() {
         <div className="navbar__inner">
           <a href="/" className="navbar__brand">
             <span className="navbar__brand-mark">E</span>
-            <span className="navbar__brand-name">ETICO</span>
+            <span className="navbar__brand-name">TICO</span>
           </a>
 
           <nav className="navbar__nav">
@@ -19,7 +19,7 @@ export function Navbar() {
             ))}
           </nav>
 
-          <a href="/#contact" className="navbar__contact">
+          <a href="/contacto" className="navbar__contact">
             Hablemos <ArrowUpRight size={17} />
           </a>
         </div>

@@ -282,7 +282,7 @@ export function ProjectCapabilities({
                     {feature.description}
                   </p>
 
-                  <a href="/#contact">
+                  <a href="/contacto">
                     Ver más
                     <ArrowRight size={13} />
                   </a>
@@ -309,7 +309,7 @@ export function ProjectCapabilities({
           </div>
 
           <a
-            href="/#contact"
+            href="/contacto"
             className="button button--primary"
           >
             Hablemos de tu proyecto

@@ -6,6 +6,7 @@
 @import "./base/reset.css";
 @import "./base/typography.css";
 @import "./base/buttons.css";
+@import "./base/pagination.css";
 
 /* =========================
    LAYOUT
@@ -14,6 +15,8 @@
 @import "./layout/container.css";
 @import "./layout/navbar.css";
 @import "./layout/footer.css";
+
+@import "./components/etico-background.css";
 
 /* =========================
    HOME SECTIONS
@@ -34,3 +37,7 @@
 @import "./pages/projects-page.css";
 @import "./pages/project-detail.css";
 @import "./pages/pricing-page.css";
+@import "./pages/contact-page.css";
+@import "./pages/home-page.css";
+
+@import "./sections/technology-marquee.css";

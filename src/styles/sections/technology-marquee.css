@@ -1,0 +1,321 @@
+/* =========================================================
+   TECHNOLOGY MARQUEE
+========================================================= */
+
+.technology-marquee {
+  padding:
+    clamp(75px, 9vw, 115px)
+    0
+    clamp(90px, 10vw, 130px);
+
+  overflow: hidden;
+
+  background:
+    rgba(248, 250, 252, 0.4);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.technology-marquee__heading {
+  max-width: 900px;
+
+  margin:
+    0
+    auto
+    60px;
+
+  text-align: center;
+}
+
+.technology-marquee__heading > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color:
+    var(--color-primary);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+}
+
+.technology-marquee__heading h2 {
+  margin: 0;
+
+  color:
+    var(--color-dark);
+
+  font-size:
+    clamp(30px, 3.7vw, 48px);
+
+  line-height: 1.08;
+
+  letter-spacing:
+    -0.045em;
+}
+
+.technology-marquee__heading h2 strong {
+  color:
+    var(--color-primary);
+
+  font-weight: inherit;
+}
+
+/* =========================================================
+   ROWS
+========================================================= */
+
+.technology-marquee__rows {
+  display: flex;
+  flex-direction: column;
+
+  gap: 32px;
+}
+
+
+/* =========================================================
+   VIEWPORT
+========================================================= */
+
+.technology-marquee__viewport {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   FADE EDGES
+========================================================= */
+
+.technology-marquee__fade {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 0;
+  bottom: 0;
+
+  width: 12%;
+
+  pointer-events: none;
+}
+
+.technology-marquee__fade--left {
+  left: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(248, 250, 252, 0.96) 15%,
+      rgba(248, 250, 252, 0.62) 40%,
+      transparent 100%
+    );
+}
+
+.technology-marquee__fade--right {
+  right: 0;
+
+  background:
+    linear-gradient(
+      270deg,
+      rgba(248, 250, 252, 0.96) 15%,
+      rgba(248, 250, 252, 0.62) 40%,
+      transparent 100%
+    );
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.technology-marquee__track {
+  width: max-content;
+
+  display: flex;
+  align-items: center;
+
+  gap:
+    clamp(35px, 5vw, 65px);
+
+  will-change: transform;
+}
+
+.technology-marquee__track--left {
+  animation:
+    technology-marquee-left
+    28s
+    linear
+    infinite;
+}
+
+.technology-marquee__track--right {
+  animation:
+    technology-marquee-right
+    32s
+    linear
+    infinite;
+}
+
+
+/* Pausa cuando el usuario coloca el mouse */
+
+.technology-marquee__viewport:hover
+.technology-marquee__track {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   TECHNOLOGY ITEM
+========================================================= */
+
+.technology-marquee__item {
+  min-width: 175px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  color:
+    #a3aab7;
+
+  white-space: nowrap;
+
+  opacity: 0.82;
+
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.technology-marquee__item:hover {
+  opacity: 1;
+
+  transform:
+    translateY(-2px);
+
+  color:
+    var(--color-dark);
+}
+
+/* ICON / MARK */
+
+.technology-marquee__mark {
+  width: 35px;
+  height: 35px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background:
+    #e9edf3;
+
+  color:
+    #8b95a5;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.technology-marquee__item:hover
+.technology-marquee__mark {
+  background:
+    var(--color-primary-soft);
+
+  color:
+    var(--color-primary);
+}
+
+.technology-marquee__item strong {
+  font-size:
+    clamp(15px, 1.5vw, 20px);
+
+  font-weight: 600;
+
+  letter-spacing:
+    -0.02em;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes technology-marquee-left {
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-50%);
+  }
+}
+
+@keyframes technology-marquee-right {
+  from {
+    transform:
+      translateX(-50%);
+  }
+
+  to {
+    transform:
+      translateX(0);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+  .technology-marquee__item {
+    min-width: 150px;
+  }
+
+  .technology-marquee__fade {
+    width: 18%;
+  }
+
+  .technology-marquee__track--left {
+    animation-duration: 24s;
+  }
+
+  .technology-marquee__track--right {
+    animation-duration: 27s;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .technology-marquee__track {
+    animation: none;
+  }
+}

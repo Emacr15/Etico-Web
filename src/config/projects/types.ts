@@ -40,6 +40,10 @@ export interface Project {
 
   capabilities: ProjectCapability[];
 
+  illustration?: string;
+
+  accent?: "blue" | "purple" | "orange" | "cyan" | "green";
+
   highlights?: ProjectHighlight[];
 
   audience?: string[];

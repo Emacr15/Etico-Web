@@ -23,6 +23,8 @@ export const projects: Project[] = [
       "Sistema de punto de venta para comercios, con ventas, inventario, clientes, cuentas por cobrar y reportes.",
     icon: Store,
     variant: "primary",
+    illustration: "/images/projects/eticopos-3d.png",
+    accent: "blue",
     href: "/proyectos/eticopos",
 
     features: [
@@ -114,6 +116,8 @@ integrations: [
       "Administración de habitaciones, reservaciones, clientes, disponibilidad y presencia web.",
     icon: Hotel,
     variant: "dark",
+    illustration: "/images/projects/eticohotel-3d.png",
+    accent: "purple",
     href: "/proyectos/eticohotel",
 
     features: [
@@ -162,6 +166,8 @@ integrations: [
       "Recepción de equipos, órdenes de reparación, técnicos, evidencias y seguimiento.",
     icon: Wrench,
     variant: "light",
+    illustration: "/images/projects/talleres-3d.png",
+    accent: "orange",
     href: "/proyectos/talleres",
 
     features: [
@@ -210,6 +216,8 @@ integrations: [
       "Conexión entre nuestros sistemas, impresoras, terminales Windows, Android y hardware.",
     icon: MonitorSmartphone,
     variant: "soft",
+    illustration: "/images/projects/device-3d.png",
+    accent: "cyan",
     href: "/proyectos/device",
 
     features: [
@@ -258,6 +266,8 @@ integrations: [
       "API de facturación electrónica, emisión de comprobantes e integración con sistemas externos.",
     icon: ReceiptText,
     variant: "invoice",
+    illustration: "/images/projects/factura-3d.png",
+    accent: "green",
     href: "/proyectos/factura",
 
     features: [
@@ -306,6 +316,8 @@ integrations: [
       "Aplicación Android para administrar impresoras y dispositivos vinculados al ecosistema Etico.",
     icon: Smartphone,
     variant: "management",
+    illustration: "/images/projects/management-3d.png",
+    accent: "purple",
     href: "/proyectos/management",
 
     features: [

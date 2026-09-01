@@ -30,7 +30,7 @@ export function PricingCTA() {
           </div>
 
           <a
-            href="/#contact"
+            href="/contacto"
             className="button button--primary"
           >
             Hablemos de tu proyecto

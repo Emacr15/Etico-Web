@@ -235,7 +235,7 @@ export function EticoPosGrowth() {
           </div>
 
           <a
-            href="/#contact"
+            href="/contacto"
             className="button button--primary"
           >
             Hablar con Etico

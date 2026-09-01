@@ -35,7 +35,6 @@ export const pricingProducts: PricingProduct[] = [
     currency: "₡",
     pricePrefix: "Desde",
     priceSuffix: "/ mes",
-    featured: true,
     features: [
       "Todo lo incluido en Basic",
       "Cuentas por cobrar y abonos",

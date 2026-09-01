@@ -50,7 +50,7 @@ export function AboutContent() {
       </div>
 
       <a
-        href="#contact"
+        href="/contacto"
         className="about__link"
       >
         Conocer más sobre Etico

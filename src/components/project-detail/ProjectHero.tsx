@@ -57,7 +57,7 @@ export function ProjectHero({
               </a>
 
               <a
-                href="/#contact"
+                href="/contacto"
                 className="button button--secondary"
               >
                 Hablar con Etico

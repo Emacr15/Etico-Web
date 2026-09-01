@@ -23,7 +23,7 @@ export function DevelopmentContent() {
 
       <div className="development__actions">
         <a
-          href="#contact"
+          href="/contacto"
           className="development__button development__button--primary"
         >
           <MessageCircle size={17} />

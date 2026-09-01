@@ -1,0 +1,89 @@
+/* ETICO GLOBAL BACKGROUND */
+
+.etico-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(59, 130, 246, 0.075), transparent 28%),
+    radial-gradient(circle at 80% 45%, rgba(96, 165, 250, 0.065), transparent 30%),
+    #f8fafc;
+}
+
+.etico-background__word {
+  position: absolute;
+  color: rgba(59, 130, 246, 0.14);
+  font-size: clamp(54px, 6vw, 92px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+  opacity: 0.72;
+  filter: blur(1.6px);
+  user-select: none;
+  pointer-events: none;
+  will-change: transform;
+  animation: etico-word-drift 38s ease-in-out infinite alternate;
+}
+
+.etico-background__word--1 { top: 1%; left: -1%; transform: rotate(-8deg); }
+.etico-background__word--2 { top: 4%; left: 30%; transform: rotate(5deg); }
+.etico-background__word--3 { top: 7%; right: 2%; transform: rotate(-5deg); }
+.etico-background__word--4 { top: 14%; left: 8%; transform: rotate(4deg); }
+.etico-background__word--5 { top: 20%; right: 18%; transform: rotate(-7deg); }
+.etico-background__word--6 { top: 27%; left: -2%; transform: rotate(5deg); }
+.etico-background__word--7 { top: 33%; left: 38%; transform: rotate(-6deg); }
+.etico-background__word--8 { top: 39%; right: -3%; transform: rotate(6deg); }
+.etico-background__word--9 { top: 46%; left: 12%; transform: rotate(-5deg); }
+.etico-background__word--10 { top: 53%; right: 24%; transform: rotate(5deg); }
+.etico-background__word--11 { top: 60%; left: -4%; transform: rotate(-7deg); }
+.etico-background__word--12 { top: 67%; left: 42%; transform: rotate(4deg); }
+.etico-background__word--13 { top: 73%; right: -1%; transform: rotate(-5deg); }
+.etico-background__word--14 { top: 80%; left: 10%; transform: rotate(6deg); }
+.etico-background__word--15 { top: 87%; left: 52%; transform: rotate(-6deg); }
+.etico-background__word--16 { top: 94%; right: 3%; transform: rotate(4deg); }
+.etico-background__word--17 { top: 10%; left: 52%; transform: rotate(-3deg); animation-delay: -7s; }
+.etico-background__word--18 { top: 17%; right: -4%; transform: rotate(7deg); animation-delay: -19s; }
+.etico-background__word--19 { top: 24%; left: 34%; transform: rotate(-4deg); animation-delay: -29s; }
+.etico-background__word--20 { top: 30%; right: 4%; transform: rotate(5deg); animation-delay: -12s; }
+.etico-background__word--21 { top: 36%; left: 8%; transform: rotate(-6deg); animation-delay: -24s; }
+.etico-background__word--22 { top: 43%; left: 56%; transform: rotate(4deg); animation-delay: -16s; }
+.etico-background__word--23 { top: 50%; left: -3%; transform: rotate(-5deg); animation-delay: -32s; }
+.etico-background__word--24 { top: 57%; right: 3%; transform: rotate(7deg); animation-delay: -9s; }
+.etico-background__word--25 { top: 64%; left: 23%; transform: rotate(-4deg); animation-delay: -21s; }
+.etico-background__word--26 { top: 71%; right: 18%; transform: rotate(5deg); animation-delay: -27s; }
+.etico-background__word--27 { top: 78%; left: -2%; transform: rotate(-7deg); animation-delay: -14s; }
+.etico-background__word--28 { top: 91%; left: 27%; transform: rotate(3deg); animation-delay: -35s; }
+
+@keyframes etico-word-drift {
+  0% {
+    translate: -8px -4px;
+    scale: 0.98;
+  }
+
+  50% {
+    translate: 30px 16px;
+    scale: 1.025;
+  }
+
+  100% {
+    translate: -4px 34px;
+    scale: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .etico-background__word {
+    font-size: clamp(55px, 18vw, 90px);
+    opacity: 0.5;
+    filter: blur(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .etico-background__word {
+    animation: none;
+  }
+}

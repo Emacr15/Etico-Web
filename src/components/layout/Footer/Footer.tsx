@@ -21,7 +21,7 @@ const companyLinks = [
   },
   {
     label: "Contacto",
-    href: "/#contact",
+    href: "/contacto",
   },
 ];
 

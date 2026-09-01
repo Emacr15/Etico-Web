@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Rocket } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 
 import {
   projectFilters,
@@ -10,19 +11,58 @@ import {
 import { Container } from "../components/layout/Container";
 import { Footer } from "../components/layout/Footer/Footer";
 import { Navbar } from "../components/layout/Navbar";
+import { Pagination } from "../components/ui/Pagination";
 import { ProjectGridCard } from "../components/ui/ProjectGridCard";
 
 export function ProjectsPage() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [activeFilter, setActiveFilter] =
     useState("all");
 
+  const projectOrder = [
+    "pos",
+    "invoice",
+    "workshop",
+    "device",
+    "hotel",
+    "management",
+  ];
+
+  const orderedProjects = [...projects].sort(
+    (first, second) =>
+      projectOrder.indexOf(first.id) -
+      projectOrder.indexOf(second.id),
+  );
+
   const filteredProjects =
     activeFilter === "all"
-      ? projects
-      : projects.filter(
+      ? orderedProjects
+      : orderedProjects.filter(
           (project) =>
             project.id === activeFilter,
         );
+
+  const projectsPerPage = 4;
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredProjects.length / projectsPerPage),
+  );
+  const requestedPage = Number(searchParams.get("pagina") ?? 1);
+  const currentPage = Number.isInteger(requestedPage)
+    ? Math.min(Math.max(requestedPage, 1), totalPages)
+    : 1;
+  const visibleProjects = filteredProjects.slice(
+    (currentPage - 1) * projectsPerPage,
+    currentPage * projectsPerPage,
+  );
+
+  const changePage = (page: number) => {
+    setSearchParams(page === 1 ? {} : { pagina: String(page) });
+    document.querySelector(".projects-catalog")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <>
@@ -157,7 +197,10 @@ export function ProjectsPage() {
                   key={filter.id}
                   type="button"
                   onClick={() =>
-                    setActiveFilter(filter.id)
+                    {
+                      setActiveFilter(filter.id);
+                      setSearchParams({});
+                    }
                   }
                   className={
                     activeFilter === filter.id
@@ -175,7 +218,7 @@ export function ProjectsPage() {
         <section className="projects-catalog">
           <Container>
             <div className="projects-catalog__grid">
-              {filteredProjects.map(
+              {visibleProjects.map(
                 (project) => (
                   <ProjectGridCard
                     key={project.id}
@@ -184,6 +227,13 @@ export function ProjectsPage() {
                 ),
               )}
             </div>
+
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={changePage}
+              label="Páginas de proyectos"
+            />
 
             <div className="projects-bottom-cta">
               <div className="projects-bottom-cta__icon">
@@ -201,7 +251,7 @@ export function ProjectsPage() {
                 </span>
               </div>
 
-              <a href="/#contact">
+              <a href="/contacto">
                 Hablemos de tu proyecto
                 <span>→</span>
               </a>

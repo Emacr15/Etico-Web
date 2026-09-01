@@ -23,7 +23,7 @@ export function FooterCTA() {
         </p>
       </div>
 
-      <a href="/#contact">
+      <a href="/contacto">
         Hablemos de tu proyecto
 
         <ArrowUpRight size={14} />

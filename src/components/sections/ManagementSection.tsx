@@ -41,7 +41,7 @@ export function ManagementSection() {
                 <span><Wifi size={15} /> Estado en línea</span>
               </div>
 
-              <a href="#contact">Explorar proyecto <ArrowUpRight size={16} /></a>
+              <a href="/contacto">Explorar proyecto <ArrowUpRight size={16} /></a>
             </div>
           </div>
 

@@ -9,7 +9,7 @@
     clamp(30px, 5vw, 55px);
 
   background:
-    var(--color-background-soft);
+    rgba(248, 250, 252, 0.4);
 }
 
 .development__panel {

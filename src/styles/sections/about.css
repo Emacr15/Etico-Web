@@ -8,7 +8,7 @@
     0;
 
   background:
-    var(--color-background);
+    rgba(255, 255, 255, 0.44);
 }
 
 .about__layout {

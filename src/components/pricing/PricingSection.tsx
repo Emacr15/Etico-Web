@@ -5,7 +5,7 @@ import type {
 
 import { Container } from "../layout/Container";
 
-import { PricingProductCard } from "./PricingProductCard";
+import { PricingPlanCard } from "./PricingPlanCard";
 
 interface PricingSectionProps {
   eyebrow: string;
@@ -40,10 +40,11 @@ export function PricingSection({
         <div
           className={`pricing-group__grid pricing-group__grid--${filtered.length}`}
         >
-          {filtered.map((product) => (
-            <PricingProductCard
+          {filtered.map((product, index) => (
+            <PricingPlanCard
               key={product.id}
               product={product}
+              animationDelay={index * 0.08}
             />
           ))}
         </div>
