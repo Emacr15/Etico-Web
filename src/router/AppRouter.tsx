@@ -17,8 +17,17 @@ function AppRoutes() {
   const location = useLocation();
 
   useEffect(() => {
+    if (location.hash) {
+      const section = document.getElementById(location.hash.slice(1));
+
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   return (
     <div key={location.pathname} className="route-transition">
