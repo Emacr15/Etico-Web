@@ -1,5 +1,4 @@
 import {
-  ArrowRight,
   Blocks,
   Braces,
   Globe2,
@@ -130,16 +129,6 @@ export function ServicesSection() {
           </div>
         </div>
 
-        <div className="custom-development__cta" data-etico-animate data-direction="up">
-          <div className="custom-development__cta-icon"><Rocket size={25} /></div>
-          <div className="custom-development__cta-copy"><strong>¿Tienes una idea en mente?</strong><p>Cuéntanos cómo trabajas y construyamos juntos la herramienta que tu negocio necesita.</p></div>
-          <a href="/contacto" className="custom-development__cta-button">Cuéntanos tu idea <ArrowRight size={16} /></a>
-          <div className="custom-development__cta-benefits">
-            <span>✓ 100% adaptado a tu negocio</span>
-            <span>✓ Integración con tus sistemas actuales</span>
-            <span>✓ Preparado para crecer contigo</span>
-          </div>
-        </div>
       </Container>
     </section>
   );

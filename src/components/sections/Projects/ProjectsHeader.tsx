@@ -18,8 +18,8 @@ export function ProjectsHeader() {
       <p className="section-heading__description">
         Cada producto de Etico resuelve una necesidad
         específica, pero todos comparten la misma idea:
-        simplificar operaciones y conectar tecnología de
-        forma útil.
+        simplificar operaciones con software que funciona
+        en cualquier dispositivo, desde cualquier lugar.
       </p>
     </div>
   );

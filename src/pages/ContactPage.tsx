@@ -1,17 +1,49 @@
 import {
   ArrowRight,
   Camera,
+  LoaderCircle,
   Mail,
   MapPin,
   Phone,
   Users,
 } from "lucide-react";
+import { type FormEvent, useState } from "react";
 
 import { Container } from "../components/layout/Container";
 import { Footer } from "../components/layout/Footer/Footer";
 import { Navbar } from "../components/layout/Navbar";
 
 export function ContactPage() {
+  const [submissionStatus, setSubmissionStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    if (formData.get("_honey")) return;
+
+    setSubmissionStatus("sending");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@eticocr.com", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(Object.fromEntries(formData.entries())),
+      });
+
+      if (!response.ok) throw new Error("No fue posible enviar el formulario");
+
+      form.reset();
+      setSubmissionStatus("success");
+    } catch {
+      setSubmissionStatus("error");
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -43,14 +75,14 @@ export function ContactPage() {
                   <div className="contact-info-card__glow" />
                   <div className="contact-info-card__icon"><MapPin size={24} /></div>
                   <h3>Ubicación</h3>
-                  <p>San José, Costa Rica</p>
+                  <p>Uruca, San José, Costa Rica</p>
                 </article>
 
                 <article className="contact-info-card contact-info-card--purple">
                   <div className="contact-info-card__glow" />
                   <div className="contact-info-card__icon"><Mail size={24} /></div>
                   <h3>Escríbenos</h3>
-                  <a href="mailto:contacto@etico.cr">contacto@etico.cr</a>
+                  <a href="mailto:info@eticocr.com">info@eticocr.com</a>
                   <p>Te responderemos lo antes posible.</p>
                 </article>
 
@@ -58,13 +90,26 @@ export function ContactPage() {
                   <div className="contact-info-card__glow" />
                   <div className="contact-info-card__icon"><Phone size={24} /></div>
                   <h3>WhatsApp / Teléfono</h3>
-                  <a href="#">+506 0000 0000</a>
+                  <a href="https://wa.me/50661312886" target="_blank" rel="noopener noreferrer">
+                    +506 6131 2886
+                  </a>
                   <p>Atención para consultas comerciales.</p>
                 </article>
               </aside>
 
               <section className="contact-form-panel">
-                <form className="contact-form">
+                <form className="contact-form" onSubmit={handleSubmit}>
+                  <input
+                    className="contact-form__honeypot"
+                    type="text"
+                    name="_honey"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+                  <input type="hidden" name="_subject" value="Nuevo mensaje desde Etico" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_url" value="https://eticocr.com/contacto" />
                   <div className="contact-form__row">
                     <label className="contact-field">
                       <span>Nombre completo</span>
@@ -103,14 +148,33 @@ export function ContactPage() {
                   </label>
 
                   <label className="contact-form__terms">
-                    <input type="checkbox" required />
+                    <input type="checkbox" name="terms" value="Aceptados" required />
                     <span>Acepto los términos y condiciones</span>
                   </label>
 
-                  <button type="submit" className="contact-form__submit">
-                    Enviar mensaje
-                    <ArrowRight size={17} />
+                  <button
+                    type="submit"
+                    className="contact-form__submit"
+                    disabled={submissionStatus === "sending"}
+                  >
+                    {submissionStatus === "sending" ? "Enviando..." : "Enviar mensaje"}
+                    {submissionStatus === "sending"
+                      ? <LoaderCircle className="contact-form__spinner" size={17} />
+                      : <ArrowRight size={17} />}
                   </button>
+
+                  <div className="contact-form__status" aria-live="polite">
+                    {submissionStatus === "success" && (
+                      <p className="contact-form__status--success">
+                        Tu mensaje fue enviado. Te responderemos lo antes posible.
+                      </p>
+                    )}
+                    {submissionStatus === "error" && (
+                      <p className="contact-form__status--error">
+                        No pudimos enviar el mensaje. Inténtalo nuevamente o escríbenos a info@eticocr.com.
+                      </p>
+                    )}
+                  </div>
                 </form>
               </section>
             </div>

@@ -399,78 +399,11 @@
 .development-capability--orange { color: #f97316; }
 .development-capability--cyan { color: #0891b2; }
 
-/* CTA */
-
-.custom-development__cta {
-  margin-top: clamp(80px, 9vw, 115px);
-  padding: 22px 25px;
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr) auto minmax(260px, 0.8fr);
-  align-items: center;
-  gap: 20px;
-  border: 1px solid rgba(37, 99, 235, 0.14);
-  border-radius: 20px;
-  background: linear-gradient(105deg, #f8faff, #eef4ff);
-}
-
-.custom-development__cta-icon {
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: white;
-  color: var(--color-primary);
-  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.1);
-}
-
-.custom-development__cta-copy strong { color: var(--color-dark); font-size: 14px; }
-.custom-development__cta-copy p { margin: 5px 0 0; color: var(--color-muted); font-size: 9px; }
-
-.custom-development__cta-button {
-  min-height: 45px;
-  padding: 0 19px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  border-radius: 10px;
-  background: var(--color-primary);
-  color: white;
-  font-size: 10px;
-  font-weight: 600;
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
-  white-space: nowrap;
-  transition: transform 0.3s ease;
-}
-
-.custom-development__cta-button:hover { transform: translateY(-2px); }
-
-.custom-development__cta-benefits {
-  padding-left: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-left: 1px solid #dbeafe;
-}
-
-.custom-development__cta-benefits span { color: var(--color-text); font-size: 8px; }
-
 /* RESPONSIVE */
 
 @media (max-width: 1100px) {
   .custom-development__layout { grid-template-columns: 1fr; }
   .custom-development__visual { max-width: 850px; margin: 0 auto; padding-top: 25px; }
-  .custom-development__cta { grid-template-columns: 52px minmax(0, 1fr) auto; }
-  .custom-development__cta-benefits {
-    grid-column: 1 / -1;
-    padding: 17px 0 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-left: 0;
-    border-top: 1px solid #dbeafe;
-  }
 }
 
 @media (max-width: 700px) {
@@ -486,8 +419,6 @@
   .custom-solution__phone { display: none; }
   .custom-development__capabilities { position: static; margin-top: 12px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .development-capability { width: auto; }
-  .custom-development__cta { margin-top: 45px; grid-template-columns: 48px minmax(0, 1fr); }
-  .custom-development__cta-button { grid-column: 1 / -1; width: 100%; }
 }
 
 @media (max-width: 480px) {

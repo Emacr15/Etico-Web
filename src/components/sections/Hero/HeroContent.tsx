@@ -1,43 +1,46 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BarChart3, CirclePlay, Settings, ShieldCheck, Users } from "lucide-react";
+
+const benefits = [
+  { icon: BarChart3, label: "Más eficiencia" },
+  { icon: Settings, label: "Procesos simplificados" },
+  { icon: Users, label: "Mejores experiencias" },
+  { icon: ShieldCheck, label: "Tecnología confiable" },
+];
 
 export function HeroContent() {
   return (
     <div className="hero__content">
-      <div className="hero__eyebrow">
-        <span />
-        Tecnología para negocios
-      </div>
+      <div className="hero__eyebrow">SOFTWARE QUE IMPULSA NEGOCIOS</div>
 
       <h1>
-        Creamos tecnología
-        <span>
-          {" "}
-          para hacer avanzar negocios.
-        </span>
+        Soluciones digitales<br />
+        para un <span>mundo real</span>
       </h1>
 
       <p>
-        Diseñamos software, plataformas e
-        integraciones que simplifican la operación
-        de empresas y conectan su mundo digital con
-        el físico.
+        Desarrollamos software, aplicaciones, sitios web e integraciones que
+        simplifican tu operación, conectan tus procesos y te ayudan a crecer.
       </p>
 
       <div className="hero__actions">
-        <a
-          href="/proyectos"
-          className="button button--primary"
-        >
-          Explorar soluciones
+        <a href="/contacto" className="button button--primary">
+          Solicitar una asesoría
           <ArrowRight size={17} />
         </a>
 
-        <a
-          href="#about"
-          className="button button--secondary"
-        >
-          Conocer Etico
+        <a href="#services" className="button button--secondary">
+          <CirclePlay size={20} />
+          Ver cómo trabajamos
         </a>
+      </div>
+
+      <div className="hero__benefits">
+        {benefits.map(({ icon: Icon, label }) => (
+          <div className="hero-benefit" key={label}>
+            <Icon size={21} />
+            <span>{label}</span>
+          </div>
+        ))}
       </div>
     </div>
   );

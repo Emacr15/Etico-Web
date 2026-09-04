@@ -10,6 +10,18 @@
   padding-block: 10px;
 
   background: transparent;
+
+  transition:
+    transform 300ms ease,
+    opacity 200ms ease;
+
+  will-change: transform;
+}
+
+.navbar--hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .navbar__inner {
@@ -175,5 +187,11 @@
 
   .navbar__brand-name {
     font-size: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar {
+    transition: none;
   }
 }

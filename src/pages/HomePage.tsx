@@ -5,6 +5,7 @@ import { AboutSection } from "../components/sections/About/AboutSection";
 import { DevelopmentSection } from "../components/sections/Development/DevelopmentSection";
 import { Hero } from "../components/sections/Hero/Hero";
 import { ProjectsSection } from "../components/sections/Projects/ProjectsSection";
+import { PurposeSection } from "../components/sections/PurposeSection";
 import { ServicesSection } from "../components/sections/Services/ServicesSection";
 import { TechnologyMarquee } from "../components/sections/TechnologyRow.tsx/TechnologyMarquee";
 import { EticoBackground } from "../components/ui/EticoBackground";
@@ -21,6 +22,7 @@ export function HomePage() {
           <Hero />
           <ProjectsSection />
           <DevelopmentSection />
+          <PurposeSection />
           <ServicesSection />
           <AboutSection />
           <TechnologyMarquee />
