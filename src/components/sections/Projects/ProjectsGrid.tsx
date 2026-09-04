@@ -3,9 +3,13 @@ import { projects } from "../../../config/projects";
 import { ProjectCard } from "./ProjectCard";
 
 export function ProjectsGrid() {
+  const featuredProjects = projects.filter(
+    (project) => !["hotel", "workshop"].includes(project.id),
+  );
+
   return (
     <div className="projects__grid">
-      {projects.map((project, index) => (
+      {featuredProjects.map((project, index) => (
         <ProjectCard
           key={project.id}
           project={project}

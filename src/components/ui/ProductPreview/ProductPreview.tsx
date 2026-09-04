@@ -1,4 +1,5 @@
 import { DevicePreview } from "./previews/DevicePreview";
+import { ErpPreview } from "./previews/ErpPreview";
 import { HotelPreview } from "./previews/HotelPreview";
 import { InvoicePreview } from "./previews/InvoicePreview";
 import { ManagementPreview } from "./previews/ManagementPreview";
@@ -30,6 +31,9 @@ export function ProductPreview({
 
     case "management":
       return <ManagementPreview />;
+
+    case "erp":
+      return <ErpPreview />;
 
     default:
       return null;

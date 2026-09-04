@@ -26,6 +26,7 @@ export function ProjectsPage() {
     "device",
     "hotel",
     "management",
+    "erp",
   ];
 
   const orderedProjects = [...projects].sort(

@@ -29,4 +29,8 @@ export const projectFilters: ProjectFilter[] = [
     id: "management",
     label: "Aplicaciones móviles",
   },
+  {
+    id: "erp",
+    label: "Gestión empresarial",
+  },
 ];

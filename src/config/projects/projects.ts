@@ -1,6 +1,7 @@
 import {
   BarChart3,
   Boxes,
+  Building2,
   CreditCard,
   Hotel,
   MonitorSmartphone,
@@ -353,6 +354,55 @@ integrations: [
         title: "Administración",
         description:
           "Gestiona equipos vinculados y su configuración desde Android.",
+      },
+    ],
+  },
+
+  {
+    id: "erp",
+    slug: "erp",
+    name: "Etico ERP",
+    category: "Gestión empresarial",
+    description:
+      "Plataforma integral para conectar ventas, compras, inventario, finanzas y operaciones en un solo lugar.",
+    icon: Building2,
+    variant: "primary",
+    accent: "blue",
+    href: "/proyectos/erp",
+
+    features: [
+      "Ventas",
+      "Compras",
+      "Inventario",
+      "Finanzas",
+    ],
+
+    headline:
+      "Conecta las áreas de tu empresa y toma mejores decisiones con información centralizada.",
+
+    longDescription:
+      "Etico ERP integra los procesos esenciales del negocio en una plataforma preparada para organizar la operación, reducir tareas manuales y ofrecer una visión completa de la empresa.",
+
+    capabilities: [
+      {
+        title: "Operación centralizada",
+        description:
+          "Gestiona ventas, compras e inventario desde una misma plataforma.",
+      },
+      {
+        title: "Control financiero",
+        description:
+          "Consulta movimientos e información clave para mantener el control del negocio.",
+      },
+      {
+        title: "Procesos conectados",
+        description:
+          "Mantén sincronizadas las diferentes áreas y reduce la duplicación de tareas.",
+      },
+      {
+        title: "Información para decidir",
+        description:
+          "Obtén una visión integral de la empresa mediante datos organizados y accesibles.",
       },
     ],
   },

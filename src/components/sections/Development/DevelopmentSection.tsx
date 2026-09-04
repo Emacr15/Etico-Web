@@ -13,11 +13,6 @@ export function DevelopmentSection() {
         <div className="development__panel">
           <DevelopmentContent />
           <DevelopmentFeatures />
-
-          <div
-            className="development__glow"
-            aria-hidden="true"
-          />
         </div>
       </Container>
     </section>

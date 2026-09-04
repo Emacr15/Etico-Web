@@ -10,8 +10,10 @@ export function ProjectsSection() {
       className="projects"
     >
       <Container>
-        <ProjectsHeader />
-        <ProjectsGrid />
+        <div className="projects__layout">
+          <ProjectsHeader />
+          <ProjectsGrid />
+        </div>
       </Container>
     </section>
   );
