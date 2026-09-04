@@ -22,8 +22,8 @@ export function HomePage() {
           <Hero />
           <ProjectsSection />
           <DevelopmentSection />
-          <PurposeSection />
           <ServicesSection />
+          <PurposeSection />
           <AboutSection />
           <TechnologyMarquee />
         </div>
