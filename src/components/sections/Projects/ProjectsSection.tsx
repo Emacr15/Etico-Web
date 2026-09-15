@@ -1,6 +1,6 @@
 import { Container } from "../../layout/Container";
 
-import { ProjectsGrid } from "./ProjectsGrid";
+import { ProjectsCarousel } from "./ProjectsCarousel";
 import { ProjectsHeader } from "./ProjectsHeader";
 
 export function ProjectsSection() {
@@ -12,7 +12,8 @@ export function ProjectsSection() {
       <Container>
         <div className="projects__layout">
           <ProjectsHeader />
-          <ProjectsGrid />
+
+          <ProjectsCarousel />
         </div>
       </Container>
     </section>

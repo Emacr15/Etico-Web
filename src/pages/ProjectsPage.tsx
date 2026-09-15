@@ -13,6 +13,7 @@ import { Footer } from "../components/layout/Footer/Footer";
 import { Navbar } from "../components/layout/Navbar";
 import { Pagination } from "../components/ui/Pagination";
 import { ProjectGridCard } from "../components/ui/ProjectGridCard";
+import { WebProjectsSection } from "../components/sections/Projects/WebProjectsSection";
 
 export function ProjectsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -58,10 +59,8 @@ export function ProjectsPage() {
   );
 
   const changePage = (page: number) => {
-    setSearchParams(page === 1 ? {} : { pagina: String(page) });
-    document.querySelector(".projects-catalog")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
+    setSearchParams(page === 1 ? {} : { pagina: String(page) }, {
+      preventScrollReset: true,
     });
   };
 
@@ -235,6 +234,8 @@ export function ProjectsPage() {
               onPageChange={changePage}
               label="Páginas de proyectos"
             />
+
+            <WebProjectsSection />
 
             <div className="projects-bottom-cta">
               <div className="projects-bottom-cta__icon">
