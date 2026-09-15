@@ -174,9 +174,107 @@
     var(--color-primary-hover);
 }
 
-@media (max-width: 800px) {
+.navbar__toggle,
+.navbar__mobile-menu {
+  display: none;
+}
+
+.navbar a:focus-visible,
+.navbar button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1000px) {
+  .navbar > .container {
+    position: relative;
+  }
+
+  .navbar__inner {
+    padding: 8px 10px;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .navbar__brand {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .navbar__brand-mark {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .navbar__brand-name {
+    font-size: 17px;
+  }
+
   .navbar__nav {
     display: none;
+  }
+
+  .navbar__contact {
+    margin-left: auto;
+    padding-inline: 14px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .navbar__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    background: #f8fafc;
+    color: var(--color-dark);
+    cursor: pointer;
+  }
+
+  .navbar__toggle[aria-expanded="true"] {
+    background: #eff6ff;
+    color: var(--color-primary);
+    border-color: #93c5fd;
+  }
+
+  .navbar__mobile-menu:not([hidden]) {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: var(--container-padding);
+    right: var(--container-padding);
+    display: grid;
+    gap: 4px;
+    padding: 10px;
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  }
+
+  .navbar__mobile-menu a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 48px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    color: var(--color-dark);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .navbar__mobile-menu a:hover {
+    background: #eff6ff;
+    color: var(--color-primary);
   }
 }
 

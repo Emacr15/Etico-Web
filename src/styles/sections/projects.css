@@ -3129,3 +3129,152 @@
   .projects-carousel__copy { min-height: 260px; }
   .projects-carousel__benefits--billing { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Mobile product selector: every option stays visible and content sets the height. */
+@media (max-width: 700px) {
+  .projects__layout {
+    gap: 28px;
+  }
+
+  .projects-carousel {
+    min-height: 0;
+    padding: 8px;
+    border-width: 1px;
+    border-radius: 20px;
+  }
+
+  .projects-carousel__menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    padding: 4px 4px 12px;
+    overflow: visible;
+  }
+
+  .projects-carousel__menu-item {
+    width: 100%;
+    min-width: 0;
+    min-height: 56px;
+    padding: 10px 8px;
+    gap: 7px;
+    border: 1px solid #e8edf4;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .projects-carousel__menu-item.is-active {
+    border-color: #93c5fd;
+  }
+
+  .projects-carousel__menu-item:hover {
+    transform: none;
+  }
+
+  .projects-carousel__menu-icon {
+    width: 20px;
+  }
+
+  .projects-carousel__menu-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .projects-carousel__stage,
+  .projects-carousel__stage > .projects-carousel__content {
+    min-height: 0;
+  }
+
+  .projects-carousel__stage > .projects-carousel__content {
+    padding: 24px 8px 16px;
+  }
+
+  .projects-carousel__stage > .projects-carousel__content[data-active="true"] {
+    grid-template-rows: auto;
+    row-gap: 24px;
+  }
+
+  .projects-carousel__main {
+    gap: 24px;
+  }
+
+  .projects-carousel__copy {
+    min-height: 0;
+  }
+
+  .projects-carousel__copy h3,
+  .projects-carousel__content--pos .projects-carousel__copy h3 {
+    font-size: clamp(28px, 7.5vw, 38px);
+    line-height: 1.1;
+  }
+
+  .projects-carousel__content--pos .projects-carousel__copy .pos-carousel__subtitle {
+    font-size: 17px;
+    line-height: 1.4;
+  }
+
+  .projects-carousel__content--pos .projects-carousel__copy > p:not(.pos-carousel__subtitle) {
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .pos-carousel__cta {
+    display: flex;
+    width: 100%;
+    min-height: 48px;
+    margin-top: 20px;
+    padding: 13px 12px;
+    gap: 10px;
+    border-radius: 12px;
+    font-size: 14px;
+  }
+
+  .projects-carousel__visual,
+  .projects-carousel__content--pos .projects-carousel__visual,
+  .projects-carousel__content--admin .projects-carousel__visual {
+    height: clamp(220px, 65vw, 310px);
+    min-height: 0;
+  }
+
+  .project-preview-frame {
+    height: 100%;
+  }
+
+  .projects-carousel__benefits,
+  .projects-carousel__benefits--billing {
+    gap: 18px 12px;
+  }
+
+  .projects-carousel__benefit,
+  .projects-carousel__benefits--billing .projects-carousel__benefit {
+    height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 6px;
+  }
+
+  .projects-carousel__benefit > div {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .projects-carousel__benefit strong {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .projects-carousel__benefit span {
+    grid-column: 1;
+    grid-row: 3;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .projects-carousel__content--pos > .projects-carousel__link {
+    display: none;
+  }
+}
